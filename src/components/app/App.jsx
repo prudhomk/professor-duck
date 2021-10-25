@@ -1,5 +1,13 @@
 import React from 'react';
+import Duck from '../duck/Duck';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <Duck/>
+    </>
+  );
 }
+
+
+  
