@@ -16,7 +16,13 @@ export default function Duck() {
         {randomPhrase()}
       </div>
       <div className={StyleSheet.duck}>
-      
+        <img/>
+      </div>
+      <div className={StyleSheet.buttons}>
+        <button>Hat</button>
+        <button>Glasses</button>
+        <button>Coat</button>
+        <button>Color</button>
       </div>
     </>
   );

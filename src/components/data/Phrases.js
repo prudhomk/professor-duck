@@ -6,6 +6,6 @@ export const phrases = [
   { phrase: 'Could it be an extra letter?  Maybe an "S"?' },
   { phrase: 'Have you tried `npm i`?' },
   { phrase: 'Don\'t be a hero, copy+paste links.' },
-  { phrase: 'What do you want your function to do?  Now how would you do that?' }, 
+  { phrase: 'What are you trying to do?' }, 
 ];
 
