@@ -9,3 +9,9 @@ export const phrases = [
   { phrase: 'What are you trying to do?' }, 
 ];
 
+export const sfx = [
+  'angryquack.mp3',
+  'quack.mp3',
+  'quack2.mp3'
+];
+
