@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import  { phrases, sfx } from '../data/Phrases.js';
 import BugForm from '../form/BugForm';
+import styles from './Duck.css';
 
 export default function Duck() {
   //manage a boolean for if each accessory button has been clicked
@@ -20,7 +21,7 @@ export default function Duck() {
   };
 
   const handleClick = () => {
-    setPixel(true);
+    (pixel === false) ? setPixel(true) : setPixel(false);
   };
 
   const custom = () => {
@@ -39,19 +40,27 @@ export default function Duck() {
     audio.play();
   };
 
+  const buttonText = () => {
+    if(pixel === false) {
+      return 'Pixelize';
+    } else {
+      return 'Rubberize';
+    }
+  };
+
   console.log('rando', randomNum);
   console.log('secret', secretNum);
   return (
     <>
       <div>
-        <div>
+        <div className={styles.speechbubble}>
           {randomPhrase()}
         </div>
-        <div className={StyleSheet.duck}>
+        <div className={styles.duck}>
           <img onClick={quackback} src={custom()}/>
         </div>
-        <div className={StyleSheet.buttons}>
-          <button onClick={handleClick}>Pixelize</button>
+        <div className={styles.buttons}>
+          <button onClick={handleClick}>{buttonText()}</button>
         </div>
         <BugForm/>
       </div>
