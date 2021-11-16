@@ -48,8 +48,6 @@ export default function Duck() {
     }
   };
 
-  console.log('rando', randomNum);
-  console.log('secret', secretNum);
   return (
     <>
       <div>
