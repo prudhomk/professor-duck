@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import  { phrases, sfx } from '../data/Phrases.js';
 import BugForm from '../form/BugForm';
 import styles from './Duck.css';
@@ -6,15 +6,24 @@ import styles from './Duck.css';
 export default function Duck() {
   //manage a boolean for if each accessory button has been clicked
   const [pixel, setPixel] = useState(false);
+  const [seconds, setSeconds] = useState(0);
 
   const x = Math.floor(Math.random() * phrases.length);
   const y = Math.floor(Math.random() * sfx.length);
   const secretNum = Math.floor(Math.random() * 50);
   const randomNum = Math.floor(Math.random() * 50);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds(seconds => seconds + 1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   const randomPhrase = () => {
     return phrases[x].phrase;
   };
+
 
   const randomSfx = () => {
     return sfx[y];
