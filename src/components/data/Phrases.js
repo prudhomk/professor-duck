@@ -16,8 +16,9 @@ export const phrases = [
 ];
 
 export const sfx = [
-  'angryquack.mp3',
+  'angry-quack.mp3',
   'quack.mp3',
-  'quack2.mp3'
+  'quack2.mp3',
+  'exasperatedquack.mp3'
 ];
 
