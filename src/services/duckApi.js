@@ -6,7 +6,8 @@ export const fetchSolutions = async () => {
 };
 
 export const createProblem = async (problem) => {
-  const res = await(`${process.env.API}/api/v1/problems`, {
+
+  const res = await fetch(`${process.env.API}/api/v1/problems`, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(problem)
