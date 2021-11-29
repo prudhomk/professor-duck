@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createProblem } from '../../services/duckApi';
+import styles from '../form/Form.css';
 
 export default function BugForm() {
 
@@ -30,7 +31,7 @@ export default function BugForm() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <label>
           Describe your Bug
           <textarea
