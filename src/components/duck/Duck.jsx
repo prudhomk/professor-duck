@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import  { phrases, sfx } from '../data/Phrases.js';
 import BugForm from '../form/BugForm';
 import styles from './Duck.css';
+
 
 export default function Duck() {
   //manage a boolean for if each accessory button has been clicked
   const [pixel, setPixel] = useState(false);
   const [seconds, setSeconds] = useState(0);
+  const history = useHistory();
 
   const x = Math.floor(Math.random() * phrases.length);
   const y = Math.floor(Math.random() * sfx.length);
@@ -31,6 +34,10 @@ export default function Duck() {
 
   const handleClick = () => {
     (pixel === false) ? setPixel(true) : setPixel(false);
+  };
+
+  const handleProblem = () => {
+    history.push('/problems');
   };
 
   const custom = () => {
@@ -70,6 +77,7 @@ export default function Duck() {
           <button onClick={handleClick}>{buttonText()}</button>
         </div>
         <BugForm/>
+        <button onClick={handleProblem}>Seek out other problems...</button>
       </div>
     </>
   );

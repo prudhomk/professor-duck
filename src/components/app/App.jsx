@@ -1,14 +1,19 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Bubbles from '../bubbles/Bubbles';
 import Duck from '../duck/Duck';
 import Header from '../header/Header';
+import ProblemList from '../problems/ProblemList';
 
 export default function App() {
   return (
     <>
       <Header/>
-      <Duck/>
-      <Bubbles/>
+      <Switch>
+        <Route exact path="/" component={Duck}/>
+        <Route exact path="/problems" component={ProblemList}/>
+        <Bubbles/>
+      </Switch>
     </>
   );
 }

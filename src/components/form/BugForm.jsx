@@ -54,7 +54,6 @@ export default function BugForm() {
         </label>
         <button>Submit Your Bug</button>
       </form>
-      <button>Search for a solution...</button>
     </div>
   );
 }
