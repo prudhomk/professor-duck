@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-// import { useHistory } from 'react-router';
-import { useProblem } from '../../state/customHooks';
+import React from 'react';
+import { useProblems } from '../../state/customHooks';
 import Problem from './Problem';
 import Loader from '../../services/Loader';
 
 const ProblemList = () => {
-  const { problems, loader } = useProblem();
-  // const history = useHistory();
-
+  const [problems, loader] = useProblems();
+  
   const problemElements = problems.map(problem => (
+   
     <li key={problem.id}>
       <Problem {...problem} />
     </li>

@@ -23,10 +23,11 @@ export default function BugForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newProblem = await createProblem({
+    await createProblem({
       description,
       code
     });
+
   };
 
   return (
@@ -52,7 +53,7 @@ export default function BugForm() {
             onChange={handleChange}
           ></textarea>
         </label>
-        <button>Submit Your Bug</button>
+        <button>Submit Your Request</button>
       </form>
     </div>
   );

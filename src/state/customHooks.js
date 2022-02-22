@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { useEffect, useState } from 'react';
-import { fetchProblem, fetchSolutions } from '../services/duckApi.js';
+import { fetchAllProblems, fetchProblem, fetchSolutions } from '../services/duckApi.js';
 
 export const useSolutions = (page) => {
   const [solutions, setSolutions] = useState([]);
@@ -16,11 +16,24 @@ export const useSolutions = (page) => {
 
 export const useProblem = (id) => {
   const [problem, setProblem] = useState({});
-
+ 
   useEffect(() => {
     fetchProblem(id)
       .then(setProblem);
   }, [id]);
-
   return problem;
 };
+
+
+export const useProblems = () => {
+  const [problems, setProblems] = useState([]);
+  const [loader, setLoader] = useState(true);
+  useEffect(async () => {
+    const res = await fetchAllProblems();
+    setProblems(res);
+    setLoader(false);
+  }, [loader]);
+
+  return { problems, loader };
+};
+

@@ -23,3 +23,8 @@ export const fetchProblem = async (id) => {
   return problem;
 };
 
+export const fetchAllProblems = async () => {
+  const res = await fetch(`${process.env.API}/api/v1/problems`);
+  const problems = await res.json();
+  return problems;
+};
