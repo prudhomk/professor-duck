@@ -14,8 +14,8 @@ export default function App() {
         <Route exact path="/" component={Duck}/>
         <Route exact path="/problems" component={ProblemList}/>
         <Route exact path="/problems/:id" component={ProblemDetail}/>
-        <Bubbles/>
       </Switch>
+      <Bubbles/>
     </>
   );
 }
