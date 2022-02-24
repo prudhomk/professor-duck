@@ -1,0 +1,14 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightsteelblue;
+}
+
+.problem {
+  background-color: lightcyan;
+  border-radius: 20px;
+  margin: 10px;
+  
+}

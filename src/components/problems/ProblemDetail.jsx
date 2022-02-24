@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { useProblem } from '../../state/customHooks.js';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import styles from './Problem.css';
 
 export default function ProblemDetail() {
   const { id } = useParams();
@@ -17,11 +19,16 @@ export default function ProblemDetail() {
   };
 
   return (
-    <div>
-      <div>
-        <h1>Problem #: {problem.id}</h1>
+    <>
+      <div className={styles.problem}>
+        <h1>Problem #{problem.id}</h1>
         <p>{problem.description}</p>
         <p>{problem.code}</p>
+        <button
+          onClick={() => navigator.clipboard.writeText(problem.code)}
+        >
+          <ContentCopyIcon/>
+        </button>
       </div>
       {/* <div>
         <button onClick={handleSolution}>Submit a Solution</button>
@@ -29,6 +36,6 @@ export default function ProblemDetail() {
       <div>
         <button onClick={handleReturn}>Return to Problem Listings</button>
       </div>
-    </div>
+    </>
   );
 }
